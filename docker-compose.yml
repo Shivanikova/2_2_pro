@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+    db:
+        image: postgres:latest
+        container_name: postgres_container
+        ports: 
+            - 5435:5432
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: library
+        volumes:
+            - ./DDL/ddl_init.sql:/docker-entrypoint-initdb.d/ddl_init.sql
+            - ./DML/dml_init.sql:/docker-entrypoint-initdb.d/dml_init.sql
+        healthcheck:
+            test: ["CMD", "pg_isready", "-d", "library", "-U", "postgres"]
+            interval: 5s
+            retries: 5
+        restart: always
