@@ -57,3 +57,23 @@ INSERT INTO public.authors (last_name, first_name, middle_name) VALUES
     ('Успенский', 'Эдуард', 'Николаевич'),
     ('Афанасьев', 'Александр', 'Николаевич'),
     ('Андерсен', 'Ганс', 'Кристиан');
+
+INSERT INTO public.authors (last_name, first_name) VALUES
+    ('Линдгрен', 'Астрид'),
+    ('Перро', 'Шарль'),
+    ('Гримм', 'Вильгельм'),
+    ('Гримм', 'Якоб');
+
+INSERT INTO public.books_authors (book_id, author_id) VALUES
+    (1, 1),
+    (2, 1),
+    (3, 5),
+    (4, 2),
+    (5, 2),
+    (6, 3),
+    (7, 4),
+    (7, 6),
+    (7, 7),
+    (7, 8);
+ 
+
